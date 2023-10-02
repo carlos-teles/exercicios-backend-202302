@@ -15,4 +15,5 @@ class JogandoDados:
 jogar = JogandoDados()
 jogar.set_numeroDeLados(8)
 print(jogar.get_numeroDeLados())
-print(jogar.jogarDado())
+for d in range(5):
+    print(jogar.jogarDado(), end=" ")
