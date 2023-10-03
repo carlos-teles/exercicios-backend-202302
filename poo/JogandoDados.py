@@ -13,6 +13,10 @@ class JogandoDados:
         return _random.randint(1, self.__numeroDeLados)
 """ Aqui inicia nosso programa """
 jogar = JogandoDados()
+print(jogar.get_numeroDeLados())
+for d in range(10):
+    print(jogar.jogarDado(), end=" ")
+print("====")
 jogar.set_numeroDeLados(8)
 print(jogar.get_numeroDeLados())
 for d in range(5):
