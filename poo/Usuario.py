@@ -7,7 +7,7 @@ class Usuario:
     def salvarDados(self):
         if self.msgSistema == None:
             arq = open("./Usuario.txt", "a")
-            arq.write( self.__str__() )
+            arq.write( str(self.__str__())+"\n" )
             arq.close()
         self.msgSistema = "Dados salvos"
         self.nome = None
