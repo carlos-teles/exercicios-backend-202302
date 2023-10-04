@@ -13,7 +13,7 @@ class Lutador:
         self.__valorDoDado = valorDoDado
         self.__mensagem = ""
     def __str__ (self):
-        return str(self.nome),self.saude
+        return str(self.__nome),str(self.__saude)
     def estaVivo( self ):
         return self.__saude > 0
     def barraDeSaude ( self ):
@@ -21,4 +21,4 @@ class Lutador:
         contador = int(self.__saude / self.__max_saude * total )
         if ( contador == 0 and self.estaVivo() ):
             contador = 1
-        return "[{0}{1}".format("#" * contador, " "*(total - contador))
+        return "[{0}{1}]".format("#" * contador, " "*(total - contador))
