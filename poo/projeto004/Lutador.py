@@ -2,12 +2,12 @@ class Lutador:
     """
     Esta classe representa a arena do Lutador
     """
-    def __init__(self, nome, idade, altura, saude, max_saude, dano, defesa, valorDoDado, mensagem ):
+    def __init__(self, nome, idade, altura, saude, dano, defesa, valorDoDado, mensagem ):
         self.__nome = nome
         self.__idade = idade
         self.__altura = altura
         self.__saude = saude
-        self.__max_saude = max_saude
+        self.__max_saude = saude
         self.__dano = dano
         self.__defesa = defesa
         self.__valorDoDado = valorDoDado
