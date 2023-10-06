@@ -25,9 +25,23 @@ class Lutador:
     def defesa( self, dano ):
         golpe = dano - ( self.__defesa + self.__valorDoDado.jogarDado() )
         if golpe > 0:
+            mensagem = "{0} defendeu-se do ataque, mas ainda perdeu {1} hp ".format(self.__nome, golpe)
             self.__saude = self.__saude - golpe
             if self.__saude < 0:
                 self.__saude = 0
+                mensagem = mensagem[:-1] + " e morreu"
+            else:
+                mensagem = "{0} bloqueou o golpe".format(self.__nome)
+            self.__set_mensagem( mensagem )
+
     def ataque( self, inimigo ):
         hit = self.__dano  + self.__valorDoDado.jogarDado()
+        mensagem = "{0} ataque com valor de {1} hp".format( self.__nome, hit )
+        self.__set_mensagem( mensagem )
         inimigo.defesa( hit )
+
+    def __set_mensagem( self, mensagem ):
+        self.__mensagem = mensagem
+
+    def get_mensagem( self ):
+        return self.__mensagem
