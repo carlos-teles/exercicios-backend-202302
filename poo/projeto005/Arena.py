@@ -20,3 +20,18 @@ class Arena:
         import time as _time
         print(mensagem)
         _time.sleep(0.75)
+    def lutar(self):
+        print("Bem-vindos a Arena!")
+        print("Hoje {0} lutara contra {1} !".format(self.__guerreiro01,self.__guerreiro02))
+        print("Que comecem os jogos...", end=" ")
+        #loop da luta
+        while(self.__guerreiro01.estaVivo() and self.__guerreiro02.estaVivo() ):
+            self.__guerreiro01.ataque(self.__guerreiro02)
+            self.__render()
+            self.__print_mensagem(self.__guerreiro01.get_mensagem())
+            self.__print_mensagem(self.__guerreiro02.get_mensagem())
+            self.__guerreiro02.ataque(self.__guerreiro01)
+            self.__render()
+            self.__print_mensagem(self.__guerreiro02.get_mensagem())
+            self.__print_mensagem(self.__guerreiro01.get_mensagem())
+            print("")
