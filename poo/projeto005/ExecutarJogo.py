@@ -1,9 +1,7 @@
 import JogandoDados as Dado
 import Lutador
 import Arena
-
 """ Aqui inicia o programa """
-#Exemplo 01
 jogar = Dado.JogandoDados()
 jogar.set_numeroDeLados(10)
 Mago = Lutador.Lutador("Merlin", 155, 159, 100, 20, 10, jogar)
