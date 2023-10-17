@@ -4,7 +4,7 @@ import json
 import sys, pprint
 
 # Enter your API key here
-api_key = "2f38471cbef2032d1de55381bc15fde6"
+api_key = ""
 
 # base_url variable to store url
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
