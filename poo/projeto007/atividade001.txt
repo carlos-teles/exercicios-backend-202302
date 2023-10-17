@@ -1,0 +1,19 @@
+https://github.com/carlos-teles/cursomobile2022/tree/main/modulo04/dia03
+
+1 - Entrar no pythonanywhere
+2 - Criar uma nova pasta em: exercicios-backend-202302/poo/ com o nome projeto007
+3 - Criar arquivo consultaIntegracao.py em projeto007
+4 - https://openweathermap.org/ e criar uma conta.
+5 - api_key ?
+
+6 - Fazer dois imports para requests e json
+7 - definir uma variavel api_key com o valor da chave que vocês receberam
+8 - definir uma variavel nome_da_cidade e atribuir valor "Rio de Janeiro"
+9 - base_url = "http://api.openweathermap.org/data/2.5/weather?"
+10 - complete_url = base_url + "appid=" + api_key + "&q=" + nome_da_cidade
+11 - response = requests.get(complete_url)
+12 - x = response.json()
+13 - print(x)
+14 - print(complete_url)
+15 - import pprint
+16 - trocar o print(x) por pprint.pprint(x)
