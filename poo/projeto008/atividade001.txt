@@ -1,0 +1,22 @@
+https://github.com/carlos-teles/cursomobile2022/tree/main/modulo04/dia03
+
+1 - Entrar no pythonanywhere
+2 - Criar uma nova pasta em: exercicios-backend-202302/poo/ com o nome projeto008
+3 - Criar arquivo consultaIntegracao.py em projeto008
+4 - Acessar e criar conta em https://www.omdbapi.com/ 
+5 - api_key do serviço
+
+6 - Fazer dois imports para requests e json no arquivo consultaIntegracao.py
+7 - definir uma variavel api_key com o valor da chave que vocês receberam no arquivo consultaIntegracao.py
+
+8 - Usar os exemplos enviados no e-mail recebido ou verificar em https://www.omdbapi.com/#examples
+
+9 - definir uma variavel nome_do_filme e atribuir valor "Titanic"
+10 - base_url = "http://www.omdbapi.com/?"
+11 - complete_url = base_url + "apikey=" + api_key + "&t="+ nome_do_filme
+12 - response = requests.get(complete_url)
+13 - x = response.json()
+14 - print(x)
+15 - print(complete_url)
+16 - import pprint
+17 - trocar o print(x) por pprint.pprint(x)
