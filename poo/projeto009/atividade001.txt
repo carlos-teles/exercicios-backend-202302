@@ -1,0 +1,44 @@
+Ler o documento: 
+
+https://www.hostinger.com.br/tutoriais/api-restful#O_Que_E_API
+
+https://www.devmedia.com.br/http-verbos/41224
+
+https://pt.wikipedia.org/wiki/Lista_de_portas_dos_protocolos_TCP_e_UDP
+
+
+Apresentando Lista e Dicionário com diferenças
+https://fastapi.tiangolo.com/tutorial/first-steps/
+
+https://github.com/carlos-teles/projetosBackend2023/blob/main/pythonProject102/main.py
+
+Inicio do uso do FASTAPI:
+
+No bash console verificar se os pacotes estão instalados:
+pip3 list | grep -i fastapi
+pip3 list | grep -i uvicorn
+
+22:06 ~/exercicios-backend-202302/poo/projeto009 (main)$ pip3 list | grep -i uvicorn
+uvicorn                          0.17.6
+22:07 ~/exercicios-backend-202302/poo/projeto009 (main)$ pip3 list | grep -i fastapi
+fastapi                          0.78.0
+22:08 ~/exercicios-backend-202302/poo/projeto009 (main)$ 
+
+1 - Entrar no pythonanywhere
+2 - Criar uma nova pasta em: exercicios-backend-202302/poo/ com o nome projeto009
+3 - Criar arquivo main.py em projeto009
+4 - Fazer import para fastapi e no arquivo main.py
+5 - Criar a variavel menu com o seguinte conteudo:
+menu = [  {   'id': 1,        'name': 'coffee',        'price': 2.5     },
+        {        'id': 2,        'name': 'cake',        'price': 10    },
+        {        'id': 3,        'name': 'tea',        'price': 3.2    },
+        {        'id': 4,        'name': 'croissant',        'price': 5.79    }
+]
+
+6 - Criar um objeto app instanciando o FastAPI:
+app = fastapi.FastAPI()
+7 - Implementar o código abaixo
+@app.get("/")
+def hello_world_root():
+    return {"Turma": "Backend"}
+
