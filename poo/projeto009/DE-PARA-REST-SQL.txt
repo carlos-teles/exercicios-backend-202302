@@ -1,0 +1,8 @@
+DE 						PARA
+Verbo HTTP x Comandos SQL
+
+GET			x SELECT
+POST		x INSERT
+DELETE		x DELETE
+PUT			x UPDATE - UM ATRIBUTO passando TODOS na chamada
+PATCH		x UPDATE - UM ATRIBUTO passando apenas o necessário na chamada
