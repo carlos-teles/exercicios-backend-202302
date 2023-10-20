@@ -1,0 +1,46 @@
+O que eh LTS -
+https://pt.wikipedia.org/wiki/Suporte_de_longo_prazo
+https://endoflife.date/python
+
+https://www.java.com/releases/
+
+https://endoflife.date/python
+
+https://releases.ubuntu.com/
+
+
+O que é um servidor:
+
+https://coodesh.com/blog/dicionario/o-que-e-um-servidor/
+
+https://kenzie.com.br/blog/servidor/
+
+https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server
+
+Entrar em: https://cs50.dev/codespaces
+
+Clicar no "terminal"
+
+pip3 list | grep -i fastapi
+pip3 list | grep -i uvicorn
+
+pip3 install fastapi
+pip3 install uvicorn
+
+
+Criar arquivo main.py
+
+Conteúdo do main.py
+==============================================
+import fastapi
+
+app = fastapi.FastAPI()
+
+@app.get("/")
+def indice():
+    return{"mensagem" : "Ola Mundo."}
+
+@app.get("/mundo")
+def indiceMundo():
+    return{"mensagem" : "Ola Todo Mundo."}
+==============================================
