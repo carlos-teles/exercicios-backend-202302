@@ -12,4 +12,4 @@ def indiceMundo():
 
 @app.get("/esporte/{nome_esporte}")
 def indiceEsporte( nome_esporte: str = fastapi.Path(...,  description="Preencha com o nome do esporte ")):
-    return{"mensagem" : "Ola Esportes."}
+    return{"mensagem" : "Ola "}
