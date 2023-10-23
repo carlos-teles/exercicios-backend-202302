@@ -10,6 +10,6 @@ def indice():
 def indiceMundo():
     return{"mensagem" : "Ola Todo Mundo!"}
 
-@app.get("/esporte")
-def indiceEsporte():
+@app.get("/esporte/{nome_esporte}")
+def indiceEsporte(  ):
     return{"mensagem" : "Ola Esportes."}
