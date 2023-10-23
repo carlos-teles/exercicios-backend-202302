@@ -11,5 +11,5 @@ def indiceMundo():
     return{"mensagem" : "Ola Todo Mundo!"}
 
 @app.get("/esporte/{nome_esporte}")
-def indiceEsporte(  ):
+def indiceEsporte( nome_esporte: str = fastapi.Path(...,  description="Preencha com o nome do esporte ")):
     return{"mensagem" : "Ola Esportes."}
