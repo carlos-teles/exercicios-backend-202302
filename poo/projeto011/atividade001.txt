@@ -1,0 +1,6 @@
+DEV --- HMG --- PRD
+HMG
+pip freeze > requirements.txt
+
+Para PRD
+pip -r requirements.txt
