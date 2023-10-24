@@ -27,7 +27,6 @@ pip3 list | grep -i uvicorn
 pip3 install fastapi
 pip3 install uvicorn
 
-
 Criar arquivo main.py
 
 Conteúdo do main.py
