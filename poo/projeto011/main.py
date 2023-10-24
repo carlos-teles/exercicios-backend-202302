@@ -16,6 +16,17 @@ def get_item(item_id: int = fastapi.Path(...,description="Preencha com o ID do i
         return {'Error': 'O item não existe'}
     return {'Item': search[0]}
 
+@app.delete('/delete-item/{item_id}')
+def delete_item(item_id: int):
+    search = list(filter(lambda x: x["id"] == item_id, menu))
+    if search == []:
+        return {'Item': 'Does not exist'}
+    for i in range(len(menu)):
+        if menu[i]['id'] == item_id:
+            del menu[i]
+            break
+    return {'Message': 'Item deleted successfully'}
+
 """ GET ALL """
 @app.get('/list-menu')
 def list_menu():
