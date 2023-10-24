@@ -1,3 +1,9 @@
+
+
+https://www.uvicorn.org/
+https://asgi.readthedocs.io/en/latest/introduction.html
+
+
 DEV --- HMG --- PRD
 HMG
 pip freeze > requirements.txt
