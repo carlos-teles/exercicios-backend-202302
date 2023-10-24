@@ -16,6 +16,19 @@ def get_item(item_id: int = fastapi.Path(...,description="Preencha com o ID do i
         return {'Error': 'O item não existe'}
     return {'Item': search[0]}
 
+@app.post('/create-item/{item_id}/{item_name}/{item_price}')
+def create_item(item_id: int, item_name: str, item_price: float ):
+    search = list(filter(lambda x: x["id"] == item_id, menu))
+    if search != []:
+        return {'Error': 'Item exists'}
+    item = {}
+    item['id'] = item_id
+    item['name'] = item_name
+    item['price'] = item_price
+    menu.append(item)
+    return item
+
+
 @app.delete('/delete-item/{item_id}')
 def delete_item(item_id: int):
     search = list(filter(lambda x: x["id"] == item_id, menu))
