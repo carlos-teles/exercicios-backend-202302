@@ -10,3 +10,8 @@ pip freeze > requirements.txt
 
 Para PRD
 pip -r requirements.txt
+
+list(filter(lambda x: x["id"] == item_id, menu))
+1 - https://www.w3schools.com/python/python_lambda.asp
+2 - https://www.w3schools.com/python/ref_func_filter.asp
+3 - https://www.w3schools.com/python/python_lists.asp
