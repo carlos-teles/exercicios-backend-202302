@@ -19,4 +19,4 @@ def get_item(item_id: int = fastapi.Path(...,description="Preencha com o ID do i
 """ GET ALL """
 @app.get('/list-menu')
 def list_menu():
-    return {'Menu': menu }
+    return {'Items': menu }
