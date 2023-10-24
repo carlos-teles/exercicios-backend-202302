@@ -1,5 +1,4 @@
 import fastapi
-
 app = fastapi.FastAPI()
 
 menu = [{   'id': 1,        'name': 'coffee',      'price': 2.5     },
@@ -14,5 +13,5 @@ def indice():
 def get_item(item_id: int = fastapi.Path(...,description="Preencha com o ID do item que deseja consultar")):
     search = list(filter(lambda x: x["id"] == item_id, menu))
     if search == []:
-        return {'Error': 'Item does not exist'}
+        return {'Error': 'O item não existe'}
     return {'Item': search[0]}
