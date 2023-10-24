@@ -30,6 +30,7 @@ pip3 install uvicorn
 Criar arquivo main.py
 
 Conteúdo do main.py
+20/10/2023
 ==============================================
 import fastapi
 
@@ -42,4 +43,23 @@ def indice():
 @app.get("/mundo")
 def indiceMundo():
     return{"mensagem" : "Ola Todo Mundo."}
+==============================================
+
+23/10/2023
+==============================================
+import fastapi
+
+app = fastapi.FastAPI()
+
+@app.get("/")
+def indice():
+    return{"mensagem" : "Ola Mundo!"}
+
+@app.get("/mundo")
+def indiceMundo():
+    return{"mensagem" : "Ola Todo Mundo!"}
+
+@app.get("/esporte/{nome_esporte}")
+def indiceEsporte( nome_esporte: str = fastapi.Path(...,  description="Preencha com o nome do esporte ")):
+    return {"mensagem" : "Ola {0}".format(nome_esporte)}
 ==============================================
