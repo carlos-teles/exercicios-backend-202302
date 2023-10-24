@@ -15,3 +15,8 @@ def get_item(item_id: int = fastapi.Path(...,description="Preencha com o ID do i
     if search == []:
         return {'Error': 'O item não existe'}
     return {'Item': search[0]}
+
+""" GET ALL """
+@app.get('/list-menu')
+def list_menu():
+    return {'Menu': menu }
