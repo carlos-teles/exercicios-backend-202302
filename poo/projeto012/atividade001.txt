@@ -9,3 +9,4 @@ Criar uma api conectando ao mysql local
         pip3 install uvicorn
 
 docker run -d --name mariadb --env MARIADB_PASSWORD=****** --env MARIADB_ROOT_PASSWORD=****** -p 3306:3306 mariadb:10.4
+docker run -d --name mariadb --env MARIADB_PASSWORD=mypass --env MARIADB_ROOT_PASSWORD=mypass -p 3306:3306 mariadb:10.4
