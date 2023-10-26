@@ -7,3 +7,5 @@ Criar uma api conectando ao mysql local
     Instala
         pip3 install fastapi
         pip3 install uvicorn
+
+docker run -d --name mariadb --env MARIADB_PASSWORD=mypass --env MARIADB_ROOT_PASSWORD=mypass -p 3306:3306 mariadb:10.4
