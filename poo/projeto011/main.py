@@ -40,6 +40,20 @@ def delete_item(item_id: int):
             break
     return {'Message': 'Item deleted successfully'}
 
+@app.put('/update-item/{item_id}/{item_name}/{item_price}')
+def update_item(item_id: int, item_name: str, item_price: float ):
+    search = list(filter(lambda x: x["id"] == item_id, menu))
+    if search == []:
+        return {'Item': 'Does not exist'}
+    else:
+        item = search
+    if item_name is not None:
+        search[0]['name'] = item_name
+    if item_price is not None:
+        search[0]['price'] = item_price
+    return item
+
+
 """ GET ALL """
 @app.get('/list-menu')
 def list_menu():
