@@ -1,0 +1,9 @@
+Criar uma api conectando ao mysql local
+
+1 - Ambiente do fastapi + uvicorn
+    Verifica
+        pip3 list | grep -i fastapi
+        pip3 list | grep -i uvicorn
+    Instala
+        pip3 install fastapi
+        pip3 install uvicorn
