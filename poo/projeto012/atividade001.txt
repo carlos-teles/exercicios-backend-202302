@@ -5,14 +5,19 @@ Criar uma api conectando ao mysql local
         pip3 list | grep -i fastapi
         pip3 list | grep -i uvicorn
         pip3 list | grep -i mysql-connector
-    Instala
+    Instalar
         pip3 install fastapi
         pip3 install uvicorn
         pip3 install mysql-connector
+
+Container em execução
+        docker ps
+Lista images de Container
+        docker images
+
 #################
 docker run -d --name mariadb --env MARIADB_PASSWORD=****** --env MARIADB_ROOT_PASSWORD=****** -p 3306:3306 mariadb:10.4
 docker run -d --name mariadb --env MARIADB_PASSWORD=mypass --env MARIADB_ROOT_PASSWORD=mypass -p 3306:3306 mariadb:10.4
 
-docker ps
-docker images
+
 docker exec -it mariadb bash
