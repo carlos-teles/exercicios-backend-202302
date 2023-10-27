@@ -17,8 +17,8 @@ Lista images de Container
 Subir o container do mariadb
         docker run -d --name mariadb --env MARIADB_PASSWORD=mypass --env MARIADB_ROOT_PASSWORD=mypass -p 3306:3306 mariadb:10.4
 Fazer Download
-wget https://www.mariadbtutorial.com/wp-content/uploads/2019/10/nation.zip
-
+    wget https://www.mariadbtutorial.com/wp-content/uploads/2019/10/nation.zip
+    unzip nation.zip
 
 "Entrar" no container
         docker exec -it mariadb bash
