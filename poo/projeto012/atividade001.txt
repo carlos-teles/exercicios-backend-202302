@@ -14,10 +14,10 @@ Container em execução
         docker ps
 Lista images de Container
         docker images
+Subir o container do mariadb
+        docker run -d --name mariadb --env MARIADB_PASSWORD=mypass --env MARIADB_ROOT_PASSWORD=mypass -p 3306:3306 mariadb:10.4
 "Entrar" no container
         docker exec -it mariadb bash
 
-#################
-docker run -d --name mariadb --env MARIADB_PASSWORD=mypass --env MARIADB_ROOT_PASSWORD=mypass -p 3306:3306 mariadb:10.4
 
-
+https://www.mariadbtutorial.com/wp-content/uploads/2019/10/nation.zip
