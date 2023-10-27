@@ -23,6 +23,11 @@ Conectar ao mysql do container
     mysql -h localhost -P 3306 --protocol=tcp -u root -p
 Fazer a carga para o mysql
     mysql -h localhost -P 3306 --protocol=tcp -u root -p < nation.sql
+Conectar ao mysql do container
+    mysql -h localhost -P 3306 --protocol=tcp -u root -p
+    #apresentar as databases
+    show databases;
+
 
 "Entrar" no container
         docker exec -it mariadb bash
