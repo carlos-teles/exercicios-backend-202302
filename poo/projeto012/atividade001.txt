@@ -30,5 +30,13 @@ Conectar ao mysql do container
 Ver a documentação em:
     https://www.mariadbtutorial.com/getting-started/mariadb-sample-database/
 
+Executar para testar a conexão com o BD:
+    python3 connection.py
+Executar para testar a conexão com o BD + o fastapi:
+    uvicorn main:app --reload
+
+
+#####################################
+...plus
 "Entrar" no container
         docker exec -it mariadb bash
