@@ -27,7 +27,8 @@ Conectar ao mysql do container
     mysql -h localhost -P 3306 --protocol=tcp -u root -p
     #apresentar as databases
     show databases;
-
+Ver a documentação em:
+    https://www.mariadbtutorial.com/getting-started/mariadb-sample-database/
 
 "Entrar" no container
         docker exec -it mariadb bash
