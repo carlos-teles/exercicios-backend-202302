@@ -9,7 +9,8 @@ def hello_world_root():
 def getContinents():
     Continents_list = []
     mycursor = connection.mydb.cursor(dictionary=True)
-    mycursor.execute("select * from continents")
+    sql = "select * from continents"
+    mycursor.execute(sql)
     for data_continents in mycursor:
         Continents_list.append( data_continents )
     mycursor.close()
@@ -19,7 +20,8 @@ def getContinents():
 def getContinent(continent_id : int):
     Continents_list = []
     mycursor = connection.mydb.cursor(dictionary=True)
-    mycursor.execute("select * from continents where continent_id = {0}".format(continent_id))
+    sql="select * from continents where continent_id = {0}".format(continent_id)
+    mycursor.execute(sql)
     for data_continents in mycursor:
         Continents_list.append( data_continents )
     mycursor.close()
