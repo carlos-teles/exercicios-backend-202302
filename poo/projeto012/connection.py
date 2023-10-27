@@ -5,4 +5,4 @@ mydb = mysql.connector.connect(
   password="mypass",
   database="nation"
 )
-print(mydb)
+#print(mydb)
