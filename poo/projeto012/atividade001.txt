@@ -14,5 +14,5 @@ docker run -d --name mariadb --env MARIADB_PASSWORD=****** --env MARIADB_ROOT_PA
 docker run -d --name mariadb --env MARIADB_PASSWORD=mypass --env MARIADB_ROOT_PASSWORD=mypass -p 3306:3306 mariadb:10.4
 
 docker ps
-docker image
+docker images
 docker exec -it mariadb bash
