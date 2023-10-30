@@ -12,6 +12,7 @@ Criar uma api conectando ao mysql local
 
 Container em execução
         docker ps
+        docker ps | grep mariadb
 Lista images de Container
         docker images
 Subir o container do mariadb
