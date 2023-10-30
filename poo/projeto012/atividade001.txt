@@ -1,7 +1,7 @@
 Criar uma api conectando ao mysql local
 
 1 - Ambiente do fastapi + uvicorn
-    Verifica
+    Verificar se os pacotes estão instalados
         pip3 list | grep -i fastapi
         pip3 list | grep -i uvicorn
         pip3 list | grep -i mysql-connector
@@ -10,7 +10,7 @@ Criar uma api conectando ao mysql local
         pip3 install uvicorn
         pip3 install mysql-connector
 
-Container em execução
+2 - Container em execução
         docker ps
         docker ps | grep mariadb
 Lista images de Container
