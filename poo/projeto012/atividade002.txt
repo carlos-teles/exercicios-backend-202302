@@ -1,4 +1,4 @@
-Subir interface de consulta a api em FLASK
+Subir interface de consulta a api em FLASK - porta 5000
 
 1 - Ambiente do flask
     Verificar se os pacotes estão instalados
@@ -6,4 +6,5 @@ Subir interface de consulta a api em FLASK
     Instalar
         pip3 install flask
 
-2 -
+2 - Criar arquivo app.py e vero o conteudo do mesmo para exeucção do comando abaixo:
+    flask run

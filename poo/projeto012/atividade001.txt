@@ -1,4 +1,4 @@
-Criar uma api conectando ao mysql local
+Criar uma api conectando ao mysql local com fastapi (porta 8000)
 
 1 - Ambiente do fastapi + uvicorn
     Verificar se os pacotes estão instalados
