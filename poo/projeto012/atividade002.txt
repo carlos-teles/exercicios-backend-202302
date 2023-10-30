@@ -1,2 +1,5 @@
 Subir interface de consulta a api em FLASK
 
+1 - Ambiente do flask
+    Verificar se os pacotes estão instalados
+        pip3 list | grep -i flask
