@@ -13,7 +13,19 @@ def consultaContinentes():
 
         json_object = response2.json()
         build_direction = "LEFT_TO_RIGHT"
-        table_attributes = {"style" : "width:100%"}
+        table_attributes = {"style" : "width:100%", "border": "1px solid black"}
+        html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
+        #print(html)
+        #return response2.json()
+        return html
+
+@app.route("/consultaRegioes")
+def consultaRegioes():
+        response2 = requests.get("http://127.0.0.1:8000/getRegions")
+
+        json_object = response2.json()
+        build_direction = "LEFT_TO_RIGHT"
+        table_attributes = {"style" : "width:100%", "border": "1px solid black"}
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
         #print(html)
         #return response2.json()
