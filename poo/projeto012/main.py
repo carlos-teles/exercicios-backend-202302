@@ -30,26 +30,13 @@ def getContinent(continent_id : int):
 
 @app.post('/createContinent/{continent_name}')
 def createContinent(continent_name: str):
-
+    if continent_name != "":
+        return {'Error': 'Item vazio'}
     mycursor = connection.mydb.cursor(dictionary=True)
-    sql="select * from continents where continent_id = {0}".format(continent_id)
+    sql="INSERT INTO continents (name) values ('{0}')".format(continent_name)
     mycursor.execute(sql)
-    for data_continents in mycursor:
-        Continents_list.append( data_continents )
     mycursor.close()
-    return {"Continent": Continents_list}
-
-
-    search = list(filter(lambda x: x["id"] == item_id, menu))
-    if search != []:
-        return {'Error': 'Item exists'}
-    item = {}
-    item['id'] = item_id
-    item['name'] = item_name
-    item['price'] = item_price
-    menu.append(item)
-    return item
-
+    return {"Continent: OK":}
 
 @app.get("/getRegions")
 def getRegions():
