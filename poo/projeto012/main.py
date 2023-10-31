@@ -30,7 +30,7 @@ def getContinent(continent_id : int):
 
 @app.post('/createContinent/{continent_name}')
 def createContinent(continent_name: str):
-    if continent_name != "":
+    if continent_name == "":
         return {'Error': 'Item vazio'}
     mycursor = connection.mydb.cursor(dictionary=True)
     sql=" INSERT INTO continents (name) values ('{0}')".format(continent_name)
