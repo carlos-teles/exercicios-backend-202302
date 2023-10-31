@@ -34,9 +34,9 @@ def createContinent(continent_name: str):
         return {'Error': 'Item vazio'}
     mycursor = connection.mydb.cursor(dictionary=True)
     sql=" INSERT INTO continents (name) values ('{0}')".format(continent_name)
-    #mycursor.execute(sql)
+    mycursor.execute(sql)
     mycursor.close()
-    return {"Continent: OK": sql}
+    return {"Continent: OK"}
 
 @app.get("/getRegions")
 def getRegions():
