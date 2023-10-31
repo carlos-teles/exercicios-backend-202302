@@ -9,7 +9,7 @@ def OlaMundo():
 @app.route("/consultaContinentes")
 def consultaContinentes():
     import requests
-    response2 = requests.get("https://ideal-journey-7695rrvrpxhr4pg-8000.app.github.dev/getContinents")
+    response2 = requests.get(" http://127.0.0.1:8000/getContinents")
     return response2.json()
 
 
