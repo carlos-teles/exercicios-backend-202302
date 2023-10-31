@@ -28,8 +28,8 @@ def getContinent(continent_id : int):
     return {"Continent": Continents_list}
 
 
-@app.post('/createContinent/{item_id}/{item_name}/{item_price}')
-def create_item(item_id: int, item_name: str, item_price: float ):
+@app.post('/createContinent/{continent_name}')
+def createContinent(continent_name: str):
     search = list(filter(lambda x: x["id"] == item_id, menu))
     if search != []:
         return {'Error': 'Item exists'}
