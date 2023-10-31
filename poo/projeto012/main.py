@@ -30,6 +30,16 @@ def getContinent(continent_id : int):
 
 @app.post('/createContinent/{continent_name}')
 def createContinent(continent_name: str):
+
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql="select * from continents where continent_id = {0}".format(continent_id)
+    mycursor.execute(sql)
+    for data_continents in mycursor:
+        Continents_list.append( data_continents )
+    mycursor.close()
+    return {"Continent": Continents_list}
+
+
     search = list(filter(lambda x: x["id"] == item_id, menu))
     if search != []:
         return {'Error': 'Item exists'}
