@@ -1,6 +1,6 @@
 import flask
 import requests
-from json2table import convert
+import json2table
 app = flask.Flask(__name__)
 
 @app.route("/")
@@ -14,7 +14,7 @@ def consultaContinentes():
         json_object = response2.json()
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%"}
-        html = convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
+        html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
         #print(html)
         #return response2.json()
         return html
