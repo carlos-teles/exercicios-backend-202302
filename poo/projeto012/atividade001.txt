@@ -41,3 +41,6 @@ Executar para testar a conexão com o BD + o fastapi:
 ...plus
 "Entrar" no container
         docker exec -it mariadb bash
+#####################################
+Leitura: Container vs VMs
+    https://www.redhat.com/pt-br/topics/containers/containers-vs-vms
