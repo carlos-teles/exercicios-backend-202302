@@ -8,8 +8,7 @@ def OlaMundo():
 
 @app.route("/consultaContinentes")
 def consultaContinentes():
-    import requests
-    response2 = requests.get(" http://127.0.0.1:8000/getContinents")
+    response2 = requests.get("http://127.0.0.1:8000/getContinents")
     return response2.json()
 
 
