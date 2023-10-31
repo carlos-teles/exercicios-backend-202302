@@ -6,10 +6,10 @@ app = flask.Flask(__name__)
 def OlaMundo():
         return "<p>Ola Mundo</p>"
 
-@app.route("/consultaContinente")
-def consultaContinente():
+@app.route("/consultaContinentes")
+def consultaContinentes():
     import requests
-    response2 = requests.get("https://www.omdbapi.com/?apikey=XXX&t=dune")
+    response2 = requests.get("https://ideal-journey-7695rrvrpxhr4pg-8000.app.github.dev/getContinents")
     return response2.json()
 
 
