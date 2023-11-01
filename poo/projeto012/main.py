@@ -41,7 +41,6 @@ def createContinent(continent_name: str):
     mycursor.close()
     return {"Continent: OK"}
 ################################################################
-################################################################
 class Continent(BaseModel):
    continent_name :str = Field(None, title="nome dos continentes", max_length=25)
 
