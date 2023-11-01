@@ -1,5 +1,8 @@
 import fastapi
 import connection
+from pydantic import BaseModel, Field
+
+
 app = fastapi.FastAPI()
 @app.get("/")
 def hello_world_root():
@@ -39,9 +42,7 @@ def createContinent(continent_name: str):
     return {"Continent: OK"}
 
 class Continent(BaseModel):
-   id: int
-   name :str = Field(None, title="name of student", max_length=10)
-   subjects: List[str] = []
+   continent_name :str = Field(None, title="name of student", max_length=10)
 
 @app.post('/createContinent2')
 def createContinent2(info: fastapi.Request):
