@@ -82,6 +82,17 @@ def getRegion(continent_id : int):
     mycursor.close()
     return {"Region": Regions_list}
 
+@app.delete("/DeleteContinent/{continent_id}")
+def DeleteContinent(continent_id : int):
+    Continents_list = []
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql="select * from continents where continent_id = {0}".format(continent_id)
+    mycursor.execute(sql)
+    for data_continents in mycursor:
+        Continents_list.append( data_continents )
+    mycursor.close()
+    return {"Continent": Continents_list}
+
 
 @app.delete('/productlines/{productline}')
 def delete_productline( productline: str ):
