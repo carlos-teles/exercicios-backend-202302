@@ -50,7 +50,7 @@ def createContinent2(info: Continent):
     #Continent_details = json.loads(Continent)
     return {
         "status" : "SUCCESS",
-        "data" : info
+        "data" : info.continent_name
     }
 
     """if continent_name == "":
