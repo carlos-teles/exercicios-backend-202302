@@ -38,6 +38,11 @@ def createContinent(continent_name: str):
     mycursor.close()
     return {"Continent: OK"}
 
+class Continent(BaseModel):
+   id: int
+   name :str = Field(None, title="name of student", max_length=10)
+   subjects: List[str] = []
+
 @app.post('/createContinent2')
 def createContinent2(info: fastapi.Request):
     req_info = info.json()
