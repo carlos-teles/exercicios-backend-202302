@@ -38,6 +38,7 @@ def createContinent(continent_name: str, continent_description: str):
     mycursor = connection.mydb.cursor(dictionary=True)
     sql=" INSERT INTO continents (name) values ('{0}')".format(continent_name)
     mycursor.execute(sql)
+    mycursor.execute("COMMIT;")
     mycursor.close()
     return {"Continent: OK"+continent_description}
 ################################################################
@@ -52,6 +53,7 @@ def createContinent2(info: Continent):
     mycursor = connection.mydb.cursor(dictionary=True)
     sql=" INSERT INTO continents (name) values ('{0}')".format(info.continent_name)
     mycursor.execute(sql)
+    mycursor.execute("COMMIT;")
     mycursor.close()
     return {
         "status" : "SUCCESS",
@@ -97,6 +99,7 @@ def DeleteContinent(continent_id : int):
         mycursor_del = connection.mydb.cursor(dictionary=True)
         sql_del = "DELETE from continents where continent_id = {0}".format(continent_id)
         mycursor_del.execute(sql_del)
+        mycursor_del.execute("COMMIT;")
         mycursor_del.close()
         return {'Message': 'Continent deleted successfully - '+str(continent_id)}
 
