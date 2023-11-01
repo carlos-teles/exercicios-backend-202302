@@ -1,5 +1,6 @@
 import fastapi
 import connection
+import json
 from pydantic import BaseModel, Field
 
 
@@ -46,10 +47,12 @@ class Continent(BaseModel):
 
 @app.post('/createContinent2')
 def createContinent2(info: Continent):
+    Continent_details = json.loads(info)
     return {
         "status" : "SUCCESS",
-        "data" : info
+        "data" : Continent_details["continent_name"]
     }
+
     """if continent_name == "":
         return {'Error': 'Item vazio'}
     mycursor = connection.mydb.cursor(dictionary=True)
