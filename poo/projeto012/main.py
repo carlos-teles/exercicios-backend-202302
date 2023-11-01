@@ -81,3 +81,23 @@ def getRegion(continent_id : int):
         Regions_list.append( data_regions )
     mycursor.close()
     return {"Region": Regions_list}
+
+
+@app.delete('/productlines/{productline}')
+def delete_productline( productline: str ):
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql_get = "SELECT productline from classicmodels.productlines where productline = '"+productline+"'"
+    mycursor.execute(sql_get)
+    productlines_str = ''
+    for productlines_cursor in mycursor:
+        productlines_str = productlines_cursor['productline']
+    mycursor.close()
+    if productlines_str == '':
+        return {'Message': 'productline Doesn´t exist'}
+    else:
+        mycursor_del = connection.mydb.cursor(dictionary=True)
+        sql_del = "DELETE from classicmodels.productlines where productline = '"+productline+"'"
+        mycursor_del.execute(sql_del)
+        mycursor_del.execute("COMMIT;")
+        mycursor_del.close()
+        return {'Message': 'Productline deleted successfully - '+str(productlines_str)}
