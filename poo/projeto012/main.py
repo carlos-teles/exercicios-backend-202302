@@ -48,18 +48,16 @@ class Continent(BaseModel):
 @app.post('/createContinent2')
 def createContinent2(info: Continent):
     #Continent_details = json.loads(Continent)
+    if info.continent_name == "":
+        return {'Error': 'Item vazio'}
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql=" INSERT INTO continents (name) values ('{0}')".format(info.continent_name)
+    mycursor.execute(sql)
+    mycursor.close()
     return {
         "status" : "SUCCESS",
         "data" : info.continent_name
     }
-
-    """if continent_name == "":
-        return {'Error': 'Item vazio'}
-    mycursor = connection.mydb.cursor(dictionary=True)
-    sql=" INSERT INTO continents (name) values ('{0}')".format(continent_name)
-    mycursor.execute(sql)
-    mycursor.close()
-    return {"Continent: OK"}"""
 
 
 @app.get("/getRegions")
