@@ -91,24 +91,13 @@ def DeleteContinent(continent_id : int):
     for data_continents in mycursor:
         Continents_list.append( data_continents )
     mycursor.close()
-    return {"Continent": Continents_list}
-
-
-@app.delete('/productlines/{productline}')
-def delete_productline( productline: str ):
-    mycursor = connection.mydb.cursor(dictionary=True)
-    sql_get = "SELECT productline from classicmodels.productlines where productline = '"+productline+"'"
-    mycursor.execute(sql_get)
-    productlines_str = ''
-    for productlines_cursor in mycursor:
-        productlines_str = productlines_cursor['productline']
-    mycursor.close()
-    if productlines_str == '':
-        return {'Message': 'productline Doesn´t exist'}
+    if len(Continents_list) == 0:
+        return {'Message': 'Continent doesn´t exist'}
     else:
         mycursor_del = connection.mydb.cursor(dictionary=True)
-        sql_del = "DELETE from classicmodels.productlines where productline = '"+productline+"'"
+        sql_del = "DELETE from continents where continent_id = {0}".format(continent_id)
         mycursor_del.execute(sql_del)
-        mycursor_del.execute("COMMIT;")
         mycursor_del.close()
-        return {'Message': 'Productline deleted successfully - '+str(productlines_str)}
+        return {'Message': 'Continent deleted successfully - '+str(continent_id)}
+
+
