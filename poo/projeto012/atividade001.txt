@@ -44,3 +44,6 @@ Executar para testar a conexão com o BD + o fastapi:
 #####################################
 Leitura: Container vs VMs
     https://www.redhat.com/pt-br/topics/containers/containers-vs-vms
+
+    FASTAPI:
+    https://fastapi.tiangolo.com/tutorial/first-steps/
