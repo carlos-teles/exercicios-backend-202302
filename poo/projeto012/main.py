@@ -32,14 +32,14 @@ def getContinent(continent_id : int):
     return {"Continent": Continents_list}
 ################################################################
 @app.post('/createContinent/{continent_name}')
-def createContinent(continent_name: str):
+def createContinent(continent_name: str, continent_description: str):
     if continent_name == "":
         return {'Error': 'Item vazio'}
     mycursor = connection.mydb.cursor(dictionary=True)
     sql=" INSERT INTO continents (name) values ('{0}')".format(continent_name)
     mycursor.execute(sql)
     mycursor.close()
-    return {"Continent: OK"}
+    return {"Continent: OK"+continent_description}
 ################################################################
 class Continent(BaseModel):
    continent_name :str = Field(None, title="nome dos continentes", max_length=25)
