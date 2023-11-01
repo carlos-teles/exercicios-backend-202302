@@ -38,7 +38,20 @@ def createContinent(continent_name: str):
     mycursor.close()
     return {"Continent: OK"}
 
-
+@app.post('/createContinent2')
+def createContinent2(info: fastapi.Request):
+    req_info = await info.json()
+    return {
+        "status" : "SUCCESS",
+        "data" : req_info
+    }
+    """if continent_name == "":
+        return {'Error': 'Item vazio'}
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql=" INSERT INTO continents (name) values ('{0}')".format(continent_name)
+    mycursor.execute(sql)
+    mycursor.close()
+    return {"Continent: OK"}"""
 
 
 @app.get("/getRegions")
