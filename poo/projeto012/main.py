@@ -47,10 +47,10 @@ class Continent(BaseModel):
 
 @app.post('/createContinent2')
 def createContinent2(info: Continent):
-    Continent_details = json.loads(info)
+    #Continent_details = json.loads(Continent)
     return {
         "status" : "SUCCESS",
-        "data" : Continent_details["continent_name"]
+        "data" : info
     }
 
     """if continent_name == "":
