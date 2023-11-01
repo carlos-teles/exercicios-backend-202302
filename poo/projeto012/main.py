@@ -42,14 +42,13 @@ def createContinent(continent_name: str):
     return {"Continent: OK"}
 
 class Continent(BaseModel):
-   continent_name :str = Field(None, title="name of student", max_length=10)
+   continent_name :str = Field(None, title="nome dos continentes", max_length=25)
 
 @app.post('/createContinent2')
-def createContinent2(info: fastapi.Request):
-    req_info = info.json()
+def createContinent2(info: Continent):
     return {
         "status" : "SUCCESS",
-        "data" : req_info
+        "data" : info
     }
     """if continent_name == "":
         return {'Error': 'Item vazio'}
