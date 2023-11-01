@@ -40,7 +40,7 @@ def createContinent(continent_name: str):
 
 @app.post('/createContinent2')
 def createContinent2(info: fastapi.Request):
-    req_info = await info.json()
+    req_info = info.json()
     return {
         "status" : "SUCCESS",
         "data" : req_info
