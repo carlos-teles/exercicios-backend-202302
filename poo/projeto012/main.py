@@ -38,6 +38,9 @@ def createContinent(continent_name: str):
     mycursor.close()
     return {"Continent: OK"}
 
+
+
+
 @app.get("/getRegions")
 def getRegions():
     Regions_list = []
