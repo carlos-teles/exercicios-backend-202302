@@ -30,8 +30,7 @@ def getContinent(continent_id : int):
         Continents_list.append( data_continents )
     mycursor.close()
     return {"Continent": Continents_list}
-
-#Refazer!!!
+################################################################
 @app.post('/createContinent/{continent_name}')
 def createContinent(continent_name: str):
     if continent_name == "":
