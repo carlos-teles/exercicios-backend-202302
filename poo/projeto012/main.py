@@ -80,7 +80,7 @@ def DeleteContinent(continent_id : int):
         mycursor_del.close()
         return {'Message': 'Continent deleted successfully - '+str(continent_id)}
 
-
+""" Regions - Start"""
 
 @app.get("/getRegions")
 def getRegions():
@@ -105,6 +105,20 @@ def getRegion(continent_id : int):
     mycursor.close()
     return {"Region": Regions_list}
 
+""" Regions - End """
+
+""" Languages - Start """
+@app.get("/getLanguages")
+def getLanguages():
+    Languages_list = []
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql = "select * from languages"
+    mycursor.execute(sql)
+    for data_languages in mycursor:
+        Languages_list.append( data_languages )
+    mycursor.close()
+    return {"Regions": Languages_list}
+""" Languages - End """
 
 
 
