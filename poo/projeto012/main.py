@@ -61,6 +61,27 @@ def createContinent2(info: Continent):
     }
 ################################################################
 
+@app.delete("/DeleteContinent/{continent_id}")
+def DeleteContinent(continent_id : int):
+    Continents_list = []
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql="select * from continents where continent_id = {0}".format(continent_id)
+    mycursor.execute(sql)
+    for data_continents in mycursor:
+        Continents_list.append( data_continents )
+    mycursor.close()
+    if len(Continents_list) == 0:
+        return {'Message': 'Continent doesn´t exist'}
+    else:
+        mycursor_del = connection.mydb.cursor(dictionary=True)
+        sql_del = "DELETE from continents where continent_id = {0}".format(continent_id)
+        mycursor_del.execute(sql_del)
+        mycursor_del.execute("COMMIT;")
+        mycursor_del.close()
+        return {'Message': 'Continent deleted successfully - '+str(continent_id)}
+
+
+
 @app.get("/getRegions")
 def getRegions():
     Regions_list = []
@@ -84,23 +105,6 @@ def getRegion(continent_id : int):
     mycursor.close()
     return {"Region": Regions_list}
 
-@app.delete("/DeleteContinent/{continent_id}")
-def DeleteContinent(continent_id : int):
-    Continents_list = []
-    mycursor = connection.mydb.cursor(dictionary=True)
-    sql="select * from continents where continent_id = {0}".format(continent_id)
-    mycursor.execute(sql)
-    for data_continents in mycursor:
-        Continents_list.append( data_continents )
-    mycursor.close()
-    if len(Continents_list) == 0:
-        return {'Message': 'Continent doesn´t exist'}
-    else:
-        mycursor_del = connection.mydb.cursor(dictionary=True)
-        sql_del = "DELETE from continents where continent_id = {0}".format(continent_id)
-        mycursor_del.execute(sql_del)
-        mycursor_del.execute("COMMIT;")
-        mycursor_del.close()
-        return {'Message': 'Continent deleted successfully - '+str(continent_id)}
+
 
 
