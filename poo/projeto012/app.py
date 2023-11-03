@@ -24,6 +24,7 @@ def consultaContinentes():
         json_object = response2.json()
         for key in json_object["Continents"]:
                 print(key)
+                json_object["Continents"]
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
