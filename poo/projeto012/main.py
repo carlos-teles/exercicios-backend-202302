@@ -121,4 +121,17 @@ def getLanguages():
 """ Languages - End """
 
 
+""" country_languages - Start """
+@app.get("/getCountryLanguages")
+def getCountryLanguages():
+    country_languages_list = []
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql = "select * from country_languages"
+    mycursor.execute(sql)
+    for data_country_languages in mycursor:
+        country_languages_list.append( data_country_languages )
+    mycursor.close()
+    return {"CountryLanguages": country_languages_list}
+""" country_languages - End """
+
 
