@@ -22,9 +22,12 @@ def page2():
 def consultaContinentes():
         response2 = requests.get("http://127.0.0.1:8000/getContinents")
         json_object = response2.json()
-        for key in json_object["Continents"]:
-                print(key)
-                json_object["Continents"]
+        for data_in in json_object["Continents"]:
+                print(data_in)
+                for data_inside in data_in:
+                        if "name" == data_inside:
+                                print(data_inside)
+                #json_object["Continents"]
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
