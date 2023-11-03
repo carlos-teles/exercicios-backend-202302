@@ -28,7 +28,7 @@ def consultaContinentes():
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
         #print(html)
         #return response2.json()
-        return flask.render_template('continentes.html', html=html)
+        return flask.render_template('generico.html', html=html)
         #return html
 
 @app.route("/consultaRegioes")
@@ -40,7 +40,8 @@ def consultaRegioes():
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
         #print(html)
         #return response2.json()
-        return html
+        return flask.render_template('generico.html', html=html)
+        #return html
 
 @app.route("/consultaPaises")
 def consultaPaises():
@@ -51,7 +52,8 @@ def consultaPaises():
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
         #print(html)
         #return response2.json()
-        return html
+        return flask.render_template('generico.html', html=html)
+        #return html
 
 @app.route("/consultaLinguas")
 def consultaLinguas():
@@ -62,7 +64,8 @@ def consultaLinguas():
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
         #print(html)
         #return response2.json()
-        return html
+        return flask.render_template('generico.html', html=html)
+        #return html
 
 
 if __name__ == '__main__':
