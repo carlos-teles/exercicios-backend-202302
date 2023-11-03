@@ -29,12 +29,10 @@ def consultaContinentes():
                 for data_inside in data_in:
                         if "name" == data_inside:
                                 print(data_in["name"])
-                #json_object["Continents"]
+                                data_in["name"] = data_in["name"] + "A"
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
-        #print(html)
-        #return response2.json()
         return flask.render_template('generico.html', html=html)
         #return html
 
