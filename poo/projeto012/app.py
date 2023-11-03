@@ -18,10 +18,9 @@ def page2():
 
 
 
-@app.route("/consultaContinentes")
+@app.route("/getContinents")
 def consultaContinentes():
         response2 = requests.get("http://127.0.0.1:8000/getContinents")
-
         json_object = response2.json()
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
@@ -31,7 +30,7 @@ def consultaContinentes():
         return flask.render_template('generico.html', html=html)
         #return html
 
-@app.route("/consultaRegioes")
+@app.route("/getRegions")
 def consultaRegioes():
         response2 = requests.get("http://127.0.0.1:8000/getRegions")
         json_object = response2.json()
@@ -43,7 +42,7 @@ def consultaRegioes():
         return flask.render_template('generico.html', html=html)
         #return html
 
-@app.route("/consultaPaises")
+@app.route("/getCountries")
 def consultaPaises():
         response2 = requests.get("http://127.0.0.1:8000/getCountries")
         json_object = response2.json()
@@ -55,7 +54,7 @@ def consultaPaises():
         return flask.render_template('generico.html', html=html)
         #return html
 
-@app.route("/consultaLinguas")
+@app.route("/getLanguages")
 def consultaLinguas():
         response2 = requests.get("http://127.0.0.1:8000/getLanguages")
         json_object = response2.json()
