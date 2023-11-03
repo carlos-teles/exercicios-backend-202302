@@ -3,13 +3,19 @@ import requests
 import json2table
 app = flask.Flask(__name__)
 
-@app.route("/")
-def OlaMundo():
-        return "<p>Ola Mundo</p>"
+
+#@app.route("/")
+#def OlaMundo():
+#        return "<p>Ola Mundo</p>"
 
 @app.route('/')
-def input():
-   return render_template('Temp.html')  
+def home():
+    return flask.render_template('template/index.html')
+
+@app.route('/page2')
+def page2():
+    return flask.render_template('template/page2.html')
+
 
 
 @app.route("/consultaContinentes")
