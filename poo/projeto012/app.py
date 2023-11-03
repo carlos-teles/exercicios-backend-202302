@@ -26,7 +26,7 @@ def consultaContinentes():
         for data_in in json_object["Continents"]:
                 for data_inside in data_in:
                         if "name" == data_inside:
-                                data_in["name"] = "<a href='/getRegion?continent_id={0}'>{1}</a>".format(data_in["continent_id"],data_in["name"])
+                                data_in["name"] = "<a href='/getRegion?continent_id={0}&name_continent={1}'>{2}</a>".format(data_in["continent_id"],data_in["name"],data_in["name"])
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
@@ -48,6 +48,7 @@ def consultaRegioes():
 @app.route("/getRegion")
 def getRegion():
         continent_id = flask.request.args.get('continent_id')
+        name_continent = flask.request.args.get('name_continent')
         response2 = requests.get("http://127.0.0.1:8000/getRegion/"+continent_id)
         json_object = response2.json()
         build_direction = "LEFT_TO_RIGHT"
