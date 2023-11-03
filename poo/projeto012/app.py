@@ -23,6 +23,7 @@ def page2():
 def consultaContinentes():
         response2 = requests.get("http://127.0.0.1:8000/getContinents")
         json_object = response2.json()
+        print(json_object)
         for data_in in json_object["Continents"]:
                 for data_inside in data_in:
                         if "name" == data_inside:
