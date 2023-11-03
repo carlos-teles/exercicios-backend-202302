@@ -28,7 +28,7 @@ def consultaContinentes():
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
         #print(html)
         #return response2.json()
-        return flask.render_template('continentes.html', utc_dt=html)
+        return flask.render_template('continentes.html', html=html)
         #return html
 
 @app.route("/consultaRegioes")
