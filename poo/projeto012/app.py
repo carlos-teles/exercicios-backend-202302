@@ -29,7 +29,7 @@ def consultaContinentes():
                 for data_inside in data_in:
                         if "name" == data_inside:
                                 print(data_in["name"])
-                                data_in["name"] = data_in["name"] + "A"
+                                data_in["name"] = "<a href='/getRegion?continent_id={0}'>{1}</a>".format(data_in["continent_id"],data_in["name"])
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
         html = json2table.convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
