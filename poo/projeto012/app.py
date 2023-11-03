@@ -10,11 +10,11 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def home():
-    return flask.render_template('template/index.html')
+    return flask.render_template('index.html')
 
 @app.route('/page2')
 def page2():
-    return flask.render_template('template/page2.html')
+    return flask.render_template('page2.html')
 
 
 
