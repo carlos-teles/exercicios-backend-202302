@@ -57,7 +57,7 @@ def consultaPaises():
 
 @app.route("/consultaLinguas")
 def consultaLinguas():
-        response2 = requests.get("http://127.0.0.1:8000/getCountryLanguages")
+        response2 = requests.get("http://127.0.0.1:8000/getLanguages")
         json_object = response2.json()
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
