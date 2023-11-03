@@ -23,12 +23,9 @@ def page2():
 def consultaContinentes():
         response2 = requests.get("http://127.0.0.1:8000/getContinents")
         json_object = response2.json()
-        print(json_object)
         for data_in in json_object["Continents"]:
-                print(data_in)
                 for data_inside in data_in:
                         if "name" == data_inside:
-                                print(data_in["name"])
                                 data_in["name"] = "<a href='/getRegion?continent_id={0}&name={1}>{2}</a>".format(data_in["continent_id"],data_in["name"],data_in["name"])
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
