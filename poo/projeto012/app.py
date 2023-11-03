@@ -7,6 +7,11 @@ app = flask.Flask(__name__)
 def OlaMundo():
         return "<p>Ola Mundo</p>"
 
+@app.route('/')
+def input():
+   return render_template('Temp.html')  
+
+
 @app.route("/consultaContinentes")
 def consultaContinentes():
         response2 = requests.get("http://127.0.0.1:8000/getContinents")
