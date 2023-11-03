@@ -28,7 +28,7 @@ def consultaContinentes():
                 print(data_in)
                 for data_inside in data_in:
                         if "name" == data_inside:
-                                print(data_inside)
+                                print(data_in["name"])
                 #json_object["Continents"]
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
