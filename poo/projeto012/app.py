@@ -50,8 +50,8 @@ def consultaRegioes():
 
 @app.route("/getRegion")
 def getRegion():
-        continent_id = request.args.get('continent_id')
-        response2 = requests.get("http://127.0.0.1:8000/getRegion/"+int(continent_id))
+        continent_id = flask.request.args.get('continent_id')
+        response2 = requests.get("http://127.0.0.1:8000/getRegion/"+continent_id)
         json_object = response2.json()
         build_direction = "LEFT_TO_RIGHT"
         table_attributes = {"style" : "width:100%", "border": "1px solid black"}
