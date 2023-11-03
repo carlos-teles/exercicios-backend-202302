@@ -134,4 +134,30 @@ def getCountryLanguages():
     return {"CountryLanguages": country_languages_list}
 """ country_languages - End """
 
+""" country_stats - Start """
+@app.get("/getCountryStats")
+def getCountryStats():
+    country_stats_list = []
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql = "select * from country_stats"
+    mycursor.execute(sql)
+    for data_country_stats in mycursor:
+        country_stats_list.append( data_country_stats )
+    mycursor.close()
+    return {"CountryStats": country_stats_list}
+""" country_stats - End """
+
+
+""" countries - Start """
+@app.get("/getCountries")
+def getCountries():
+    countries_list = []
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql = "select * from countries"
+    mycursor.execute(sql)
+    for data_countries in mycursor:
+        countries_list.append( data_countries )
+    mycursor.close()
+    return {"Countries": countries_list}
+""" countries - End """
 
