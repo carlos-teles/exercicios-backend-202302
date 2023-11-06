@@ -81,12 +81,13 @@ def DeleteContinent(continent_id : int):
         return {'Message': 'Continent deleted successfully - '+str(continent_id)}
 
 ################################################################
-@app.patch('/updateContinent/{continent_name}')
-def createContinent(continent_name: str, continent_description: str):
-    if continent_name == "":
+@app.patch('/updateContinent/{continent_id}/{continent_name}')
+def createContinent(continent_id : int, continent_name: str):
+    Continents_list = []
+    if continent_name == or "" continent_id == 0:
         return {'Error': 'Item vazio'}
     mycursor = connection.mydb.cursor(dictionary=True)
-    sql=" INSERT INTO continents (name) values ('{0}')".format(continent_name)
+    sql="select * from continents where continent_id = {0}".format(continent_id)
     mycursor.execute(sql)
     mycursor.execute("COMMIT;")
     mycursor.close()
