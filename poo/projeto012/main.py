@@ -96,7 +96,7 @@ def createContinent(continent_id : int, continent_name: str):
         return {'Message': 'Continent doesn´t exist'}
     else:
         mycursor_del = connection.mydb.cursor(dictionary=True)
-        sql_del = "update continents set continent_name = '{0}' where continent_id = {1}".format(continent_name,continent_id)
+        sql_del = "update continents set name = '{0}' where continent_id = {1}".format(continent_name,continent_id)
         mycursor_del.execute(sql_del)
         mycursor_del.execute("COMMIT;")
         mycursor_del.close()
