@@ -84,14 +84,23 @@ def DeleteContinent(continent_id : int):
 @app.patch('/updateContinent/{continent_id}/{continent_name}')
 def createContinent(continent_id : int, continent_name: str):
     Continents_list = []
-    if continent_name == or "" continent_id == 0:
-        return {'Error': 'Item vazio'}
+    if continent_name == "" or continent_id == 0:
+        return {'Error': 'Empty Item'}
     mycursor = connection.mydb.cursor(dictionary=True)
     sql="select * from continents where continent_id = {0}".format(continent_id)
     mycursor.execute(sql)
-    mycursor.execute("COMMIT;")
+    for data_continents in mycursor:
+        Continents_list.append( data_continents )
     mycursor.close()
-    return {"Continent: OK"+continent_description}
+    if len(Continents_list) == 0:
+        return {'Message': 'Continent doesn´t exist'}
+    else:
+        mycursor_del = connection.mydb.cursor(dictionary=True)
+        sql_del = "update continents set continent_name = '{0}' where continent_id = {1}".format(continent_name,continent_id)
+        mycursor_del.execute(sql_del)
+        mycursor_del.execute("COMMIT;")
+        mycursor_del.close()
+        return {'Message': 'Continent updated successfully - '+str(continent_id)}
 
 """ Continent - End"""
 """ Regions - Start"""
