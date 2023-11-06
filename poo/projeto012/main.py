@@ -80,6 +80,19 @@ def DeleteContinent(continent_id : int):
         mycursor_del.close()
         return {'Message': 'Continent deleted successfully - '+str(continent_id)}
 
+################################################################
+@app.patch('/updateContinent/{continent_name}')
+def createContinent(continent_name: str, continent_description: str):
+    if continent_name == "":
+        return {'Error': 'Item vazio'}
+    mycursor = connection.mydb.cursor(dictionary=True)
+    sql=" INSERT INTO continents (name) values ('{0}')".format(continent_name)
+    mycursor.execute(sql)
+    mycursor.execute("COMMIT;")
+    mycursor.close()
+    return {"Continent: OK"+continent_description}
+
+""" Continent - End"""
 """ Regions - Start"""
 
 @app.get("/getRegions")
